@@ -7,17 +7,11 @@ module mem2wb(clk, clr, alu_out, dmOut, writeReg, RegWrite, MemToReg, out);
     input [31:0] alu_out, dmOut;
     output [71:0] out;
 
-    // out[0:0] 存放 RegWrite;
-    // out[1:1] 存放 MemToReg;
-    // out[7:2] 存放 writeReg;
-    // out[39:8] 存放 alu_out;
-    // out[71:40] 存放 dmOut;
-
     reg [71:0] out;
     
-    always @(posedge clk or negedge clr) begin
-        if(clr == 0) begin
-            out <= 32'b0;
+    always @(posedge clk or posedge clr) begin
+        if(clr) begin
+            out <= 72'b0;
         end else if(clk == 1) begin
             out[0:0] = RegWrite;
             out[1:1] = MemToReg;

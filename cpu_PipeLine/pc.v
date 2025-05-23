@@ -7,8 +7,8 @@ module pc(clk, clr, en, adr, data);
 
     reg [31:0] data;
 
-    always @(posedge clk or negedge clr) begin
-        if(clr == 0)
+    always @(posedge clk or posedge clr) begin
+        if(clr)
         begin
             data <= 32'b0;
         end 

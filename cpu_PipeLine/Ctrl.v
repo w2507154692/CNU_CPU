@@ -1,7 +1,7 @@
 `timescale 1ns / 1ns
 
 module Ctrl(op, funct, RegWrite, MemToReg, MemWrite, BranchEq, Jump, ALUc, ALUSrc, RegDst);
-    input [6:0] op, funct;
+    input [5:0] op, funct;
     output RegWrite, MemToReg, MemWrite, BranchEq, Jump, ALUSrc, RegDst;
     output [2:0] ALUc;
 
