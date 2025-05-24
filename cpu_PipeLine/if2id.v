@@ -11,8 +11,8 @@ module if2id(clk, clr, flush, Instr, pc4, out);
         if(clr || flush) begin
             out <= 64'b0;
         end else if(clk == 1) begin
-            out[31:0] = pc4[31:0];
-            out[63:32] = Instr[31:0];
+            out[31:0] <= pc4[31:0];
+            out[63:32] <= Instr[31:0];
         end
     end
 

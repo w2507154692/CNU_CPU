@@ -15,17 +15,17 @@ module exe2mem(clk, clr, flush, zero, alu_out, writeData, writeReg, pcBranch, Re
         if(clr || flush) begin
             out <= 133'b0;
         end else if(clk == 1) begin
-            out[0:0] = zero;
-            out[1:1] = RegWrite;
-            out[2:2] = MemToReg;
-            out[3:3] = MemWrite;
-            out[4:4] = BranchEq;
-            out[5:5] = Jump;
-            out[10:6] = writeReg;
-            out[42:11] = alu_out;
-            out[74:43] = writeData;
-            out[106:75] = pcBranch;
-            out[132:107] = pcJump;
+            out[0:0] <= zero;
+            out[1:1] <= RegWrite;
+            out[2:2] <= MemToReg;
+            out[3:3] <= MemWrite;
+            out[4:4] <= BranchEq;
+            out[5:5] <= Jump;
+            out[10:6] <= writeReg;
+            out[42:11] <= alu_out;
+            out[74:43] <= writeData;
+            out[106:75] <= pcBranch;
+            out[132:107] <= pcJump;
         end
     end
 

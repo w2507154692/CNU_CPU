@@ -13,11 +13,11 @@ module mem2wb(clk, clr, alu_out, dmOut, writeReg, RegWrite, MemToReg, out);
         if(clr) begin
             out <= 72'b0;
         end else if(clk == 1) begin
-            out[0:0] = RegWrite;
-            out[1:1] = MemToReg;
-            out[7:2] = writeReg;
-            out[39:8] = alu_out;
-            out[71:40] = dmOut;
+            out[0:0] <= RegWrite;
+            out[1:1] <= MemToReg;
+            out[7:2] <= writeReg;
+            out[39:8] <= alu_out;
+            out[71:40] <= dmOut;
         end
     end
 

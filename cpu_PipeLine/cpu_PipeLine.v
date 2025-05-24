@@ -1,8 +1,19 @@
 `timescale 1ns / 1ns
 
+// module cpu_PipeLine(clk, clr, IR, r8, r16, r17, r18,
+//                     RegWriteD, MemToRegD, MemWriteD, BranchEqD, JumpD, ALUcD,
+//                     ALUSrcD, RegDstD, InstrD, RegWriteE, MemToRegE, MemWriteE,
+//                     BranchEqE, JumpE, ALUSrcE, ALUcE, RegDstE,
+//                     pcOut, imOut);
 module cpu_PipeLine(clk, clr, IR, r8, r16, r17, r18);
     input clk, clr;
-    output [31:0] IR, r8, r16, r17, r18;
+    output  wire[31:0] IR, r8, r16, r17, r18;
+    // output RegWriteD, MemToRegD, MemWriteD, BranchEqD, JumpD, ALUSrcD, RegDstD;
+    // output [2:0] ALUcD;
+    // output [31:0] InstrD;
+    // output RegWriteE, MemToRegE, MemWriteE, BranchEqE, JumpE, ALUSrcE, RegDstE;
+    // output [2:0] ALUcE;
+    // output [31:0] pcOut, imOut;
 
     //数据通路
     //IF
@@ -13,12 +24,12 @@ module cpu_PipeLine(clk, clr, IR, r8, r16, r17, r18);
     wire [31:0] InstrD, pc4D, qaD, qbD, ep_immD;
     wire RegWriteD, MemToRegD, MemWriteD, BranchEqD, JumpD, ALUSrcD, RegDstD;
     wire [2:0] ALUcD;
-    wire [25:0] adrD;
     //EXE
-    wire [157:0] id2exe_out;
+    wire [162:0] id2exe_out;
     wire zeroE;
-    wire [31:0] qaE, qbE, alu_outE, aluB, ep_immE, pc4E, pcBranchE, pcJumpE;
-    wire [4:0] RtE, RdE, WriteRegE;
+    wire [31:0] qaE, qbE, alu_outE, ep_immE, pc4E, pcBranchE, pcJumpE;
+    reg [31:0] aluA, aluB;
+    wire [4:0] RtE, RdE, RsE, WriteRegE;
     wire RegWriteE, MemToRegE, MemWriteE, BranchEqE, JumpE, ALUSrcE, RegDstE;
     wire [2:0] ALUcE;
     wire [25:0] adrE;
@@ -46,7 +57,7 @@ module cpu_PipeLine(clk, clr, IR, r8, r16, r17, r18);
         2'b10: newPC <= pcBranchM;
         default: newPC = pc4F;
     endcase
-end
+    end
     
     //ID
     assign InstrD = if2id_out[63:32];
@@ -68,8 +79,8 @@ end
     assign qbE = id2exe_out[99:68];
     assign pc4E = id2exe_out[131:100];
     assign adrE = id2exe_out[157:132];
-    assign aluB = (ALUSrcE == 0) ? qbE : ep_immE;
-    assign WriteRegE = (RegDstE == 0) ? RtE : RdE;
+    assign RsE = id2exe_out[162:158];
+    assign WriteRegE = (RegDstE == 0) ? RdE : RtE;
     assign pcBranchE = (ep_immE << 2) + pc4E;
     assign pcJumpE[31:28] = pc4E[31:28];
     assign pcJumpE[27:2] = adrE;
@@ -88,31 +99,56 @@ end
     assign pcJumpM = exe2mem_out[132:107];
     assign PCctrl[0] = (JumpM) ? 1 : 0;
     assign PCctrl[1] = (BranchEqM && zeroM) ? 1 : 0;
-    assign flush = PCctrl[0] || PCctrl[1];
     //WB
     assign RegWriteW = mem2wb_out[0:0];
     assign MemToRegW = mem2wb_out[1:1];
     assign WriteRegW = mem2wb_out[7:2];
-    assign alu_outw = mem2wb_out[39:8];
+    assign alu_outW = mem2wb_out[39:8];
     assign dmOutW = mem2wb_out[71:40];
     assign rfData = (MemToRegW == 0) ? alu_outW : dmOutW;
+
+    //数据冲突
+    //重定向
+    always @(*) begin
+        if(RegWriteM && WriteRegM!=0 && WriteRegM == RsE) begin
+            aluA = alu_outM;
+        end else if(RegWriteW && WriteRegW!=0 && WriteRegW == RsE) begin
+            aluA = alu_outW;
+        end else begin
+            aluA = qaE;
+        end
+
+        if(ALUSrcE == 1) begin
+            aluB = ep_immE;
+        end else if(RegWriteM && WriteRegM!=0 && WriteRegM == RtE) begin
+            aluB = alu_outM;
+        end else if(RegWriteW && WriteRegW!=0 && WriteRegW == RtE) begin
+            aluB = alu_outW;
+        end else begin
+            aluB = qbE;
+        end
+    end
+
+    //控制冲突
+    assign flush = PCctrl[0] || PCctrl[1];
+
 
     //组件实例化
     //IF
     pc pc(.clk(clk), .clr(clr), .en(1'b1), .adr(newPC), .data(pcOut));
-    IM IM(.addr(newPC), .out(imOut));
+    IM IM(.addr(pcOut), .out(imOut));
     if2id if2id(.clk(clk), .clr(clr), .flush(flush), .Instr(imOut), .pc4(pc4F), .out(if2id_out));
     //ID
-    Ctrl Ctrl(.op(InstrD[31:26]), .funct(InstrD[5:0]),.RegWrite(RegWriteD), .MemToReg(MemToRegD),
+    Ctrl Ctrl(.op(InstrD[31:26]), .funct(InstrD[5:0]), .RegWrite(RegWriteD), .MemToReg(MemToRegD),
                 .MemWrite(MemWriteD), .BranchEq(BranchEqD),.Jump(JumpD), .ALUc(ALUcD), .ALUSrc(ALUSrcD), .RegDst(RegDstD));
     RF RF(.clk(clk), .clr(clr), .we(RegWriteW), .ra(InstrD[25:21]), .rb(InstrD[20:16]),
             .rw(WriteRegW), .rd(rfData), .qa(qaD), .qb(qbD), .r8(r8), .r16(r16), .r17(r17), .r18(r18));
     EP EP(.imm(InstrD[15:0]), .ep_imm(ep_immD));
     id2exe id2exe(.clk(clk), .clr(clr), .flush(flush), .qa(qaD), .qb(qbD), .Rt(InstrD[20:16]), .Rd(InstrD[15:11]), .ep_imm(ep_immD), .pc4(pc4D), 
                 .RegWrite(RegWriteD), .MemToReg(MemToRegD), .MemWrite(MemWriteD), .BranchEq(BranchEqD), .Jump(JumpD),
-                .ALUc(ALUcD), .ALUSrc(ALUSrcD), .RegDst(RegDstD), .adr(InstrD[25:0]), .out(id2exe_out));
+                .ALUc(ALUcD), .ALUSrc(ALUSrcD), .RegDst(RegDstD), .adr(InstrD[25:0]), .Rs(InstrD[25:21]), .out(id2exe_out));
     //EXE
-    alu alu(.a(qaE), .b(aluB), .aluc(ALUcE), .alu_out(alu_outE), .zero(zeroE));
+    alu alu(.a(aluA), .b(aluB), .aluc(ALUcE), .alu_out(alu_outE), .zero(zeroE));
     exe2mem exe2mem(.clk(clk), .clr(clr), .flush(flush), .zero(zeroE), .alu_out(alu_outE), .writeData(qbE),
                     .writeReg(WriteRegE), .pcBranch(pcBranchE),
                     .RegWrite(RegWriteE), .MemToReg(MemToRegE), .MemWrite(MemWriteE),
