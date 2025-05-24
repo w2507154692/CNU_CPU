@@ -1,8 +1,8 @@
 `timescale 1ns / 1ns
 
-module id2exe(clk, clr, flush, qa, qb, Rt, Rd, ep_imm, pc4,
+module id2exe(clk, clr, flushCtrl, flushData, qa, qb, Rt, Rd, ep_imm, pc4,
                 RegWrite, MemToReg, MemWrite, BranchEq, Jump, ALUc, ALUSrc, RegDst, adr, Rs, out);
-    input clk, clr, flush;
+    input clk, clr, flushCtrl, flushData;
     input RegWrite, MemToReg, MemWrite, BranchEq, Jump, ALUSrc, RegDst;
     input [2:0] ALUc;
     input [4:0] Rt, Rd;
@@ -15,7 +15,7 @@ module id2exe(clk, clr, flush, qa, qb, Rt, Rd, ep_imm, pc4,
     reg [162:0] out;
     
     always @(posedge clk or posedge clr) begin
-        if(clr || flush) begin
+        if(clr || flushCtrl || flushData) begin
             out <= 163'b0;
         end else if(clk == 1) begin
             out[0:0] <= RegWrite;

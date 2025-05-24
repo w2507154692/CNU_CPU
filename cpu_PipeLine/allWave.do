@@ -55,6 +55,7 @@ add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/ALUSrcE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/RegDstE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/ALUcE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/adrE
+add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/RsE
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/exe2mem_out
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/zeroM
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/alu_outM
@@ -185,4 +186,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {11 ns} {84 ns}
+WaveRestoreZoom {11 ns} {259 ns}

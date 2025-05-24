@@ -1,8 +1,8 @@
 `timescale 1ns / 1ns
 
-module exe2mem(clk, clr, flush, zero, alu_out, writeData, writeReg, pcBranch, RegWrite,
+module exe2mem(clk, clr, flushCtrl, zero, alu_out, writeData, writeReg, pcBranch, RegWrite,
                 MemToReg, MemWrite, BranchEq, Jump, pcJump, out);
-    input clk, clr, flush;
+    input clk, clr, flushCtrl;
     input zero, RegWrite, MemToReg, MemWrite, BranchEq, Jump;
     input [4:0] writeReg;
     input [31:0] alu_out, writeData, pcBranch;
@@ -12,7 +12,7 @@ module exe2mem(clk, clr, flush, zero, alu_out, writeData, writeReg, pcBranch, Re
     reg [132:0] out;
     
     always @(posedge clk or posedge clr) begin
-        if(clr || flush) begin
+        if(clr || flushCtrl) begin
             out <= 133'b0;
         end else if(clk == 1) begin
             out[0:0] <= zero;

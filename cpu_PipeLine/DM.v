@@ -8,11 +8,17 @@ module DM(clk, we, addr, din, dout);
     output [31:0] dout;
 
     reg [31:0] ram [255:0];
+    integer i;
+    initial begin
+        for(i = 0; i < 255; i = i + 1)
+            ram[i] = 32'h0;
+    end
+    
     always @(posedge clk)   //Ê±ÖÓÉÏÉýÑØÐ´¼Ä´æÆ÷
         if (we == 1)
             ram[addr] <= din;
 
-    assign dout = ram[addr];
+    assign dout = (addr < 255) ? ram[addr] : 32'h0;
     
 endmodule
 
