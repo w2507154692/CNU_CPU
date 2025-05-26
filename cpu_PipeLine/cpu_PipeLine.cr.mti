@@ -1,16 +1,16 @@
-D:/ModelismProject/cpu_PipeLine/pc.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/pc.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module pc
-
-Top level modules:
-	pc
-
-} {} {}} D:/ModelismProject/cpu_PipeLine/exe2mem.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/exe2mem.v
+D:/ModelismProject/cpu_PipeLine/exe2mem.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/exe2mem.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module exe2mem
 
 Top level modules:
 	exe2mem
+
+} {} {}} D:/ModelismProject/cpu_PipeLine/pc.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/pc.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pc
+
+Top level modules:
+	pc
 
 } {} {}} D:/ModelismProject/cpu_PipeLine/ROM_IM.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/ROM_IM.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -68,19 +68,19 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	all_t
 
-} {} {}} D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module cpu_PipeLine
-
-Top level modules:
-	cpu_PipeLine
-
 } {} {}} D:/ModelismProject/cpu_PipeLine/EP.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/EP.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module EP
 
 Top level modules:
 	EP
+
+} {} {}} D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module cpu_PipeLine
+
+Top level modules:
+	cpu_PipeLine
 
 } {} {}} D:/ModelismProject/cpu_PipeLine/Ctrl.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/Ctrl.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -89,12 +89,12 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	Ctrl
 
-} {} {}} D:/ModelismProject/cpu_PipeLine/if2id.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/if2id.v
+} {} {}} D:/ModelismProject/cpu_PipeLine/pc_t.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/pc_t.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module if2id
+-- Compiling module pc_t
 
 Top level modules:
-	if2id
+	pc_t
 
 } {} {}} D:/ModelismProject/cpu_PipeLine/ROM_IM_t.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/ROM_IM_t.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -103,19 +103,12 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	ROM_IM_t
 
-} {} {}} D:/ModelismProject/cpu_PipeLine/pc_t.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/pc_t.v
+} {} {}} D:/ModelismProject/cpu_PipeLine/if2id.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/if2id.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module pc_t
+-- Compiling module if2id
 
 Top level modules:
-	pc_t
-
-} {} {}} D:/ModelismProject/cpu_PipeLine/all.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/all.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module all
-
-Top level modules:
-	all
+	if2id
 
 } {} {}} D:/ModelismProject/cpu_PipeLine/DM.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/DM.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -123,6 +116,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	DM
+
+} {} {}} D:/ModelismProject/cpu_PipeLine/all.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/all.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module all
+
+Top level modules:
+	all
 
 } {} {}} D:/ModelismProject/cpu_PipeLine/mem2wb.v {1 {vlog -work work -vopt -stats=none D:/ModelismProject/cpu_PipeLine/mem2wb.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
