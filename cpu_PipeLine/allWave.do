@@ -32,6 +32,7 @@ add wave -noupdate -expand -group ID /cpu_PipeLine_t/utt/JumpD
 add wave -noupdate -expand -group ID /cpu_PipeLine_t/utt/ALUSrcD
 add wave -noupdate -expand -group ID /cpu_PipeLine_t/utt/RegDstD
 add wave -noupdate -expand -group ID /cpu_PipeLine_t/utt/ALUcD
+add wave -noupdate -expand -group ID /cpu_PipeLine_t/utt/LoadCtrlD
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/id2exe_out
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/zeroE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/qaE
@@ -56,6 +57,7 @@ add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/RegDstE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/ALUcE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/adrE
 add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/RsE
+add wave -noupdate -expand -group EXE /cpu_PipeLine_t/utt/LoadCtrlE
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/exe2mem_out
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/zeroM
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/alu_outM
@@ -69,6 +71,7 @@ add wave -noupdate -group MEM /cpu_PipeLine_t/utt/MemToRegM
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/MemWriteM
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/BranchEqM
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/JumpM
+add wave -noupdate -group MEM /cpu_PipeLine_t/utt/LoadCtrlM
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/PCctrl
 add wave -noupdate -group MEM /cpu_PipeLine_t/utt/flush
 add wave -noupdate -group WB /cpu_PipeLine_t/utt/mem2wb_out
@@ -78,6 +81,7 @@ add wave -noupdate -group WB /cpu_PipeLine_t/utt/rfData
 add wave -noupdate -group WB /cpu_PipeLine_t/utt/WriteRegW
 add wave -noupdate -group WB /cpu_PipeLine_t/utt/RegWriteW
 add wave -noupdate -group WB /cpu_PipeLine_t/utt/MemToRegW
+add wave -noupdate -group WB /cpu_PipeLine_t/utt/LoadCtrlW
 add wave -noupdate -group pc /cpu_PipeLine_t/utt/pc/clk
 add wave -noupdate -group pc /cpu_PipeLine_t/utt/pc/clr
 add wave -noupdate -group pc /cpu_PipeLine_t/utt/pc/en
@@ -91,6 +95,8 @@ add wave -noupdate -group if2id /cpu_PipeLine_t/utt/if2id/flush
 add wave -noupdate -group if2id /cpu_PipeLine_t/utt/if2id/Instr
 add wave -noupdate -group if2id /cpu_PipeLine_t/utt/if2id/pc4
 add wave -noupdate -group if2id /cpu_PipeLine_t/utt/if2id/out
+add wave -noupdate -group if2id /cpu_PipeLine_t/utt/if2id/flushCtrl
+add wave -noupdate -group if2id /cpu_PipeLine_t/utt/if2id/stallData
 add wave -noupdate -group Ctrl /cpu_PipeLine_t/utt/Ctrl/op
 add wave -noupdate -group Ctrl /cpu_PipeLine_t/utt/Ctrl/funct
 add wave -noupdate -group Ctrl /cpu_PipeLine_t/utt/Ctrl/RegWrite
@@ -136,6 +142,8 @@ add wave -noupdate -group id2exe /cpu_PipeLine_t/utt/id2exe/qb
 add wave -noupdate -group id2exe /cpu_PipeLine_t/utt/id2exe/pc4
 add wave -noupdate -group id2exe /cpu_PipeLine_t/utt/id2exe/adr
 add wave -noupdate -group id2exe /cpu_PipeLine_t/utt/id2exe/out
+add wave -noupdate -group id2exe /cpu_PipeLine_t/utt/id2exe/flushCtrl
+add wave -noupdate -group id2exe /cpu_PipeLine_t/utt/id2exe/flushData
 add wave -noupdate -group alu /cpu_PipeLine_t/utt/alu/a
 add wave -noupdate -group alu /cpu_PipeLine_t/utt/alu/b
 add wave -noupdate -group alu /cpu_PipeLine_t/utt/alu/aluc

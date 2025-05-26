@@ -8,12 +8,10 @@ module pc(clk, clr, stallData, en, adr, data);
     reg [31:0] data;
 
     always @(posedge clk or posedge clr) begin
-        if(clr)
-        begin
+        if(clr) begin
             data <= 32'b0;
         end 
-        else if(en && !stallData)
-        begin
+        else if(en && !stallData) begin
             data <= adr;
         end
     end

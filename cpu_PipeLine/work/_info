@@ -9,7 +9,7 @@ z2
 cModel Technology
 dD:/ModelSim/examples
 vall
-Z0 !s110 1748074171
+Z0 !s110 1748239898
 !i10b 1
 !s100 d7@9B>D7B?;h6=7VlM8l[3
 IOCd9zY2:b@]k58@L9>N0f1
@@ -23,7 +23,7 @@ Z3 OL;L;10.4;61
 r1
 !s85 0
 31
-!s108 1748074171.203000
+!s108 1748239898.015000
 !s107 D:/ModelismProject/cpu_PipeLine/all.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/all.v|
 !i113 0
@@ -43,7 +43,7 @@ R3
 r1
 !s85 0
 31
-!s108 1748074171.246000
+!s108 1748239898.093000
 !s107 D:/ModelismProject/cpu_PipeLine/all_t.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/all_t.v|
 !i113 0
@@ -62,7 +62,7 @@ w1747819101
 FD:/ModelismProject/cpu_PipeLine/alu.v
 L0 3
 R3
-!s108 1748074171.291000
+!s108 1748239898.178000
 !s107 D:/ModelismProject/cpu_PipeLine/alu.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/alu.v|
 !i113 0
@@ -73,15 +73,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 c0zON0lmOFPUY?VAhg3j<1
-IiNS9I12n_MTN;3R:GfemX3
+!s100 `iJkmdiS4PeDO]TC3;XbA3
+Ih:m:0c6Kdj:i@Chz2IT`:3
 R2
-w1748074109
+w1748237782
 8D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v
 FD:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v
 L0 3
 R3
-!s108 1748074171.996000
+!s108 1748239899.443000
 !s107 D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/cpu_PipeLine.v|
 !i113 0
@@ -101,7 +101,7 @@ w1748070994
 FD:/ModelismProject/cpu_PipeLine/cpu_PipeLine_t.v
 L0 3
 R3
-!s108 1748074172.047000
+!s108 1748239899.527000
 !s107 D:/ModelismProject/cpu_PipeLine/cpu_PipeLine_t.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/cpu_PipeLine_t.v|
 !i113 0
@@ -113,22 +113,22 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 >In7JTb@Za@fAW1MlXioC2
-IKZJkEIm6fJ^9o4U]dC_?F2
+!s100 ;XAWDchN<20K^0E=dFZDP2
+I[LGToglaej1IRB[E^3DRn1
 R2
-w1747989946
+w1748236027
 8D:/ModelismProject/cpu_PipeLine/Ctrl.v
 FD:/ModelismProject/cpu_PipeLine/Ctrl.v
 L0 3
 R3
-!s108 1748074171.756000
+!s108 1748239899.037000
 !s107 D:/ModelismProject/cpu_PipeLine/Ctrl.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/Ctrl.v|
 !i113 0
 R4
 n@ctrl
 vCtrl_t
-R0
+!s110 1748239899
 !i10b 1
 !s100 ?JDb>J6I?@XN2JSALe6?T2
 I<NY@Re^TTm8eA[hGk[lcb1
@@ -142,7 +142,7 @@ R3
 r1
 !s85 0
 31
-!s108 1748074171.800000
+!s108 1748239899.127000
 !s107 D:/ModelismProject/cpu_PipeLine/Ctrl_t.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/Ctrl_t.v|
 !i113 0
@@ -182,7 +182,7 @@ R5
 R6
 L0 3
 R3
-!s108 1748074171.336000
+!s108 1748239898.264000
 R7
 R8
 !i113 0
@@ -202,7 +202,7 @@ w1747918333
 FD:/ModelismProject/cpu_PipeLine/EP.v
 L0 3
 R3
-!s108 1748074171.709000
+!s108 1748239898.958000
 !s107 D:/ModelismProject/cpu_PipeLine/EP.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/EP.v|
 !i113 0
@@ -214,15 +214,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 nM1kb[S=9?MBcNZVlD3NT0
-IbEJ6oXTM7729`lm_c?<E:3
+!s100 5DLz;ZLGWI=VGUPG8?>gJ2
+InI32fVfznBkQd2Oog;aNz2
 R2
-w1748071250
+w1748236116
 8D:/ModelismProject/cpu_PipeLine/exe2mem.v
 FD:/ModelismProject/cpu_PipeLine/exe2mem.v
 L0 3
 R3
-!s108 1748074172.091000
+!s108 1748239899.606000
 !s107 D:/ModelismProject/cpu_PipeLine/exe2mem.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/exe2mem.v|
 !i113 0
@@ -233,15 +233,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 f<J88HK;YRbn0<PAl_8g60
-ISci;hXg3eNG63UQY=5WfB2
+!s100 DhfOf<LkiZ0MQ465=9<S11
+IEfA?06N<3W6G_`HkzoYoI0
 R2
-w1748072390
+w1748236077
 8D:/ModelismProject/cpu_PipeLine/id2exe.v
 FD:/ModelismProject/cpu_PipeLine/id2exe.v
 L0 3
 R3
-!s108 1748074171.850000
+!s108 1748239899.206000
 !s107 D:/ModelismProject/cpu_PipeLine/id2exe.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/id2exe.v|
 !i113 0
@@ -260,7 +260,7 @@ w1748072367
 FD:/ModelismProject/cpu_PipeLine/if2id.v
 L0 3
 R3
-!s108 1748074171.906000
+!s108 1748239899.282000
 !s107 D:/ModelismProject/cpu_PipeLine/if2id.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/if2id.v|
 !i113 0
@@ -271,15 +271,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 I];]1Q<UT5ZjWe96JiYh@2
-IinfCAnQa0?e3Yg5nWaB<01
+!s100 jWOc>NgZn090AK=kn9S^l1
+I?2`h5^U<KKP[AB2H@CjL>3
 R2
-w1748074160
+w1748239896
 Z9 8D:/ModelismProject/cpu_PipeLine/IM.v
 Z10 FD:/ModelismProject/cpu_PipeLine/IM.v
 L0 3
 R3
-!s108 1748074171.381000
+!s108 1748239898.344000
 Z11 !s107 D:/ModelismProject/cpu_PipeLine/IM.v|
 Z12 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/IM.v|
 !i113 0
@@ -311,15 +311,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 z3J]S5cEWnYU>c=oY@;Q:3
-IN98_3o8IX5C[3;KiAB2bi1
+!s100 TV>ONN0_oGX:3LbZ7dC8o2
+I^znjfJ_kZB92kTHaDjcG;2
 R2
-w1748070086
+w1748236160
 8D:/ModelismProject/cpu_PipeLine/mem2wb.v
 FD:/ModelismProject/cpu_PipeLine/mem2wb.v
 L0 3
 R3
-!s108 1748074171.952000
+!s108 1748239899.361000
 !s107 D:/ModelismProject/cpu_PipeLine/mem2wb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/mem2wb.v|
 !i113 0
@@ -330,15 +330,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 nn`I5ATPNV1LJi=G=<8bo3
-INWKm1[nL=XHiB1W;KmVJ=1
+!s100 PnfffT5ZERHRH]S0WPR5Y2
+I0gNfOSNg[]GG0ORbD0VW]1
 R2
-w1748072344
+w1748074582
 8D:/ModelismProject/cpu_PipeLine/pc.v
 FD:/ModelismProject/cpu_PipeLine/pc.v
 L0 3
 R3
-!s108 1748074171.439000
+!s108 1748239898.425000
 !s107 D:/ModelismProject/cpu_PipeLine/pc.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/pc.v|
 !i113 0
@@ -358,7 +358,7 @@ R3
 r1
 !s85 0
 31
-!s108 1748074171.483000
+!s108 1748239898.504000
 !s107 D:/ModelismProject/cpu_PipeLine/pc_t.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/pc_t.v|
 !i113 0
@@ -377,7 +377,7 @@ w1747989384
 FD:/ModelismProject/cpu_PipeLine/RF.v
 L0 3
 R3
-!s108 1748074171.529000
+!s108 1748239898.583000
 !s107 D:/ModelismProject/cpu_PipeLine/RF.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/RF.v|
 !i113 0
@@ -398,7 +398,7 @@ R3
 r1
 !s85 0
 31
-!s108 1748074171.575000
+!s108 1748239898.671000
 !s107 D:/ModelismProject/cpu_PipeLine/RF_t.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/RF_t.v|
 !i113 0
@@ -419,7 +419,7 @@ R3
 r1
 !s85 0
 31
-!s108 1748074171.619000
+!s108 1748239898.748000
 !s107 D:/ModelismProject/cpu_PipeLine/ROM_IM.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/ROM_IM.v|
 !i113 0
@@ -440,7 +440,7 @@ R3
 r1
 !s85 0
 31
-!s108 1748074171.664000
+!s108 1748239898.835000
 !s107 D:/ModelismProject/cpu_PipeLine/ROM_IM_t.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ModelismProject/cpu_PipeLine/ROM_IM_t.v|
 !i113 0
